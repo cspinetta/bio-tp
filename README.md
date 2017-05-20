@@ -1,4 +1,4 @@
-Bioinformatic TP - UTN FRBA
+TP Bioinformatica - UTN FRBA
 =================================
 
 ## Getting Started
