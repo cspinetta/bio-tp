@@ -1,45 +1,27 @@
-# Crawling Server API
+Bioinformatic TP - UTN FRBA
+=================================
 
-### Request Crawl for a Report:
+## Getting Started
+
+### Dependencies:
+
+* Java 1.8
+* Scala 2.12.2
+* SBT 0.13.13
+
+### Generate a Fat Jar with Assembly:
+
+* Run `sbt assembly` from the project root.
+
+The fully executable JAR will be in `/target/scala-2.12/` ready to rock.
+
+### Running the Script
+
+The following is an example to run the app:
+
 ```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "report_id": 1,
-    "report_type_id": 30,
-    "search": {
-        "currency": "ARS",
-        "destinations": [{
-            "city_id": 20,
-            "by_site": [{
-                "site_id": 10,
-                "city_ids": [{
-                    "id": 300,
-                    "name": "San Carlos de Bariloche"
-                }]
-            }]
-        }],
-        "sites": [{
-            "id": 10,
-            "name": "Despegar.com ARG"
-        }, {
-            "id": 11,
-            "name": "Almundo.com ARG"
-        }],
-        "parameters": [{
-                "checkin": "2017-11-10T18:06:22Z",
-                "checkout": "2017-11-20T18:06:22Z",
-                "adults": 2
-            },
-            {
-                "checkin": "2017-12-10T18:06:22Z",
-                "checkout": "2017-12-20T18:06:22Z",
-                "adults": 3
-            },
-            {
-                "checkin": "2018-01-10T18:06:22Z",
-                "checkout": "2018-01-20T18:06:22Z",
-                "adults": 2
-            }
-        ]
-    }
-}' 'http://localhost:8080/request/crawling'
+java -jar /path/to/bio-tp.jar
+    transcription
+    --input /home/cristian/Documents/Development/bio/bio-tp/src/main/resources/sourcing/INS_mRNA_NM_000207.gb
+    --output /home/cristian/Documents/Development/bio/bio-tp/src/main/resources/output/fasta/exc1.fas
 ```

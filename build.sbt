@@ -22,7 +22,9 @@ libraryDependencies ++= {
     "org.typelevel"                     %%   "cats"                       % "0.8.1",
 
     "org.biojava"                        %   "biojava-core"               % "4.2.7",
-    "org.biojava"                        %   "biojava-ws"                 % "4.2.7"
+    "org.biojava"                        %   "biojava-ws"                 % "4.2.7",
+
+    "com.github.scopt"                  %%   "scopt"                      % "3.5.0"
   )
 }
 
