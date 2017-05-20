@@ -51,7 +51,7 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
         )
 
       cmd("alignment")
-        .action((_, c) => c.copy(command = Command.Transcription))
+        .action((_, c) => c.copy(command = Command.Alignment))
         .text("Execute alignment by NCBI QBlast service")
         .children(
           opt[String]('i', "input")
