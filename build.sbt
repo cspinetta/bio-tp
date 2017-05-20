@@ -17,14 +17,17 @@ libraryDependencies ++= {
     "org.slf4j"                          %   "slf4j-api"                  % "1.7.13",
     "ch.qos.logback"                     %   "logback-core"               % "1.1.3",
     "ch.qos.logback"                     %   "logback-classic"            % "1.1.3",
-    "org.json4s"                        %%   "json4s-jackson"             % "3.5.2",
     "org.scalatest"                     %%   "scalatest"                  % scalaTestV % "test",
-    "org.typelevel"                     %%   "cats"                       % "0.8.1",
 
-    "org.biojava"                        %   "biojava-core"               % "4.2.7",
-    "org.biojava"                        %   "biojava-ws"                 % "4.2.7",
+    "org.biojava"                        %   "biojava-core"               % "4.2.7"
+      excludeAll ExclusionRule(organization = "org.apache.logging.log4j"),
+    "org.biojava"                        %   "biojava-ws"                 % "4.2.7"
+      exclude ("commons-beanutils", "commons-beanutils")
+      excludeAll ExclusionRule(organization = "org.apache.logging.log4j"),
 
     "com.github.scopt"                  %%   "scopt"                      % "3.5.0"
   )
 }
+
+Assembly.settings
 
