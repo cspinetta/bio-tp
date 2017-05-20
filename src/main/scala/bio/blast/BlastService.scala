@@ -1,9 +1,10 @@
 package bio.blast
 
-import java.io.{BufferedReader, File, FileWriter, InputStreamReader}
-import java.nio.file.{Files, Path, Paths}
+import java.io.{BufferedReader, File, InputStreamReader}
+import java.nio.file.StandardCopyOption.REPLACE_EXISTING
+import java.nio.file.{Files, Paths}
 
-import base.LazyLoggerSupport
+import base.{LazyLoggerSupport, MeterSupport}
 import org.biojava.nbio.core.sequence.ProteinSequence
 import org.biojava.nbio.core.sequence.io.FastaReaderHelper
 import org.biojava.nbio.core.sequence.io.util.IOUtils
@@ -11,7 +12,7 @@ import org.biojava.nbio.ws.alignment.qblast._
 
 import scala.collection.JavaConverters._
 
-trait BlastService extends LazyLoggerSupport {
+trait BlastService extends LazyLoggerSupport with MeterSupport {
 
   def process(fastaInput: File, outputPath: String): Unit = {
     val blastService = new NCBIQBlastService()
@@ -32,12 +33,18 @@ trait BlastService extends LazyLoggerSupport {
     var reader: Option[BufferedReader] = None
     try {
 
-      val reqId = blastService.sendAlignmentRequest(withRightElORF.getSequenceAsString, alignmentProp)
+      val reqId = withTimeLoggingInSeconds({
+        val reqId = blastService.sendAlignmentRequest(withRightElORF.getSequenceAsString, alignmentProp)
 
-      while (!blastService.isReady(reqId)) {
-        logger.info(s"Waiting for result of RequestID $reqId. Sleeping for 1 minute.")
-        Thread.sleep(1000)
-      }
+        while (!blastService.isReady(reqId)) {
+          logger.info(s"Waiting for result of RequestID $reqId. Sleeping for 1 second.")
+          Thread.sleep(1000)
+        }
+
+        reqId
+
+      }, (time: Long) =>
+        logger.info(s"Received alignment result from NCBI QBlast service in $time seconds."))
 
       val inputStream = blastService.getAlignmentResults(reqId, outputProp)
 
@@ -46,7 +53,7 @@ trait BlastService extends LazyLoggerSupport {
       new File(outputPath).mkdirs()
       val outputFilePath = Paths.get(outputPath + File.separator + "Exercise-2-blast_result.txt")
 
-      Files.copy(inputStream, outputFilePath)
+      Files.copy(inputStream, outputFilePath, REPLACE_EXISTING)
 
       logger.info(s"Saving BLAST result in file: ${outputFilePath.getFileName}")
 
