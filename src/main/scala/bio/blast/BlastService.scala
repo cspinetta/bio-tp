@@ -14,8 +14,10 @@ import scala.collection.JavaConverters._
 
 trait BlastService extends LazyLoggerSupport with MeterSupport {
 
-  def process(fastaInput: File, outputPath: String): Unit = {
+  def process(fastaInput: File, outputPath: String,
+              outputFilename: String = "Exercise-2-blast_result.txt"): String = {
     val blastService = new NCBIQBlastService()
+    val outputFilePath = Paths.get(outputPath + File.separator + "Exercise-2-blast_result.txt")
 
     val proteinSeq = FastaReaderHelper.readFastaProteinSequence(fastaInput)
 
@@ -51,13 +53,14 @@ trait BlastService extends LazyLoggerSupport with MeterSupport {
       reader = Some(new BufferedReader(new InputStreamReader(inputStream)))
 
       new File(outputPath).mkdirs()
-      val outputFilePath = Paths.get(outputPath + File.separator + "Exercise-2-blast_result.txt")
 
       Files.copy(inputStream, outputFilePath, REPLACE_EXISTING)
 
       logger.info(s"Saving BLAST result in file: ${outputFilePath.getFileName}")
 
     } finally reader.foreach(IOUtils.close)
+
+    outputFilePath.toString
 
   }
 

@@ -11,12 +11,12 @@ import scala.collection.JavaConverters._
 
 trait ProteinTranscription extends LazyLoggerSupport with AppEnvConfig {
 
-  def transcriptFromFile(): File = {
+  def transcriptFromFile(mRNAFilePath: String, fastaOutputPath: String): File = {
 
     logger.info("Translation from RNA to the corresponding peptide sequences")
 
-    logger.info(s"Opening file with mRNA sequences: ${configuration.source.mRNA}")
-    val mRNAFile = new File(configuration.source.mRNA)
+    logger.info(s"Opening file with mRNA sequences: $mRNAFilePath")
+    val mRNAFile = new File(mRNAFilePath)
 
     val dNASequences = GenbankReaderHelper.readGenbankDNASequence(mRNAFile).asScala
 
@@ -31,8 +31,8 @@ trait ProteinTranscription extends LazyLoggerSupport with AppEnvConfig {
       proteinSeq
     }
 
-    new File(configuration.output.fasta).mkdirs()
-    val outputFile = new File(configuration.output.fasta + File.separator + "ex1.fas")
+    new File(fastaOutputPath).mkdirs()
+    val outputFile = new File(fastaOutputPath + File.separator + "ex1.fas")
     outputFile.createNewFile()
 
     logger.info(s"Saving protein sequence in FASTA file: ${outputFile.getAbsolutePath}")

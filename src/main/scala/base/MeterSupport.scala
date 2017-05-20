@@ -42,7 +42,7 @@ trait MeterSupport {
   def withTimeLoggingInSeconds[T](f: ⇒ T, processTime: Long ⇒ _): T = {
     val start = System.nanoTime()
     val tryF = Try(f)
-    val total = (System.nanoTime() - start) / 1000000
+    val total = (System.nanoTime() - start) / math.pow(10, 9)
     processTime(total)
     tryF.get
   }

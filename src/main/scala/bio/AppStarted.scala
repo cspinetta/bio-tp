@@ -9,8 +9,9 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
 
   logger.info("Start Bio operations...")
 
-  private val proteinFile = ProteinTranscription.transcriptFromFile()
+  private val proteinFile = ProteinTranscription
+    .transcriptFromFile(configuration.source.mRNA, configuration.output.fasta)
 
-  BlastService.process(proteinFile, configuration.output.blast)
+  val blastFilePath = BlastService.process(proteinFile, configuration.output.blast)
 
 }
