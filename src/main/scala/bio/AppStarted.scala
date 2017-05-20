@@ -18,63 +18,56 @@ object Command extends Enumeration {
 
 object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
 
-  logger.info("Start Bio operations...")
-  logger.info(s"Parameters: ${args.mkString(", ")}")
+  logger.info("Starting Bio-TP...")
 
-//  private val proteinFile = ProteinTranscription
-//    .transcriptFromFile(configuration.source.mRNA, configuration.output.fasta)
-//
-//  val blastFilePath = BlastService.process(proteinFile, configuration.output.blast)
+  parseParameters.map(config =>
+    config.command match {
+      case Command.Transcription =>
+        ProteinTranscription.transcriptFromFile(config.inputFilePath, config.outputFilePath)
+      case Command.Alignment =>
+        BlastService.process(config.inputFilePath, config.outputFilePath)
+    }
+  )
 
-  val parser = new scopt.OptionParser[Config]("bio-tp") {
-    implicit val CommandRead: scopt.Read[Command.Value] =
-      scopt.Read.reads(Command withName)
+  private def parseParameters: Option[Config] = {
+    val parser = new scopt.OptionParser[Config]("bio-tp") {
+      implicit val CommandRead: scopt.Read[Command.Value] =
+        scopt.Read.reads(Command withName)
 
-    head("bio-tp", "v1.0")
+      head("bio-tp", "v1.0")
 
-    cmd("transcription")
-      .action((_, c) => c.copy(command = Command.Transcription))
-      .text("Execute transcription")
-      .children(
-        opt[String]('i', "input")
-          .action((x, c) => c.copy(inputFilePath = x))
-          .text("The path to the input file")
-          .required(),
-        opt[String]('o', "output")
-          .action((x, c) => c.copy(outputFilePath = x))
-          .text("The path to the output file")
-          .required()
-      )
+      cmd("transcription")
+        .action((_, c) => c.copy(command = Command.Transcription))
+        .text("Execute transcription")
+        .children(
+          opt[String]('i', "input")
+            .action((x, c) => c.copy(inputFilePath = x))
+            .text("The path to the input file")
+            .required(),
+          opt[String]('o', "output")
+            .action((x, c) => c.copy(outputFilePath = x))
+            .text("The path to the output file")
+            .required()
+        )
 
-    cmd("alignment")
-      .action((_, c) => c.copy(command = Command.Transcription))
-      .text("Execute alignment by NCBI QBlast service")
-      .children(
-        opt[String]('i', "input")
-          .action((x, c) => c.copy(inputFilePath = x))
-          .text("The path to the input file")
-          .required(),
-        opt[String]('o', "output")
-          .action((x, c) => c.copy(outputFilePath = x))
-          .text("The path to the output file")
-          .required()
-      )
+      cmd("alignment")
+        .action((_, c) => c.copy(command = Command.Transcription))
+        .text("Execute alignment by NCBI QBlast service")
+        .children(
+          opt[String]('i', "input")
+            .action((x, c) => c.copy(inputFilePath = x))
+            .text("The path to the input file")
+            .required(),
+          opt[String]('o', "output")
+            .action((x, c) => c.copy(outputFilePath = x))
+            .text("The path to the output file")
+            .required()
+        )
 
-    checkConfig( c =>
-      if (c.command == Command.NoOp) failure("You must to especify a command: transcription or alignment")
-      else success )
-  }
-
-  parser.parse(args, Config()) match {
-    case Some(config) =>
-      config.command match {
-        case Command.Transcription =>
-          ProteinTranscription.transcriptFromFile(config.inputFilePath, config.outputFilePath)
-        case Command.Alignment =>
-          BlastService.process(config.inputFilePath, config.outputFilePath)
-      }
-
-    case None =>
-    // arguments are bad, error message will have been displayed
+      checkConfig( c =>
+        if (c.command == Command.NoOp) failure("You must to especify a command: transcription or alignment")
+        else success )
+    }
+    parser.parse(args, Config())
   }
 }

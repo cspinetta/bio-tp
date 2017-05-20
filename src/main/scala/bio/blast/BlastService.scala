@@ -54,6 +54,7 @@ trait BlastService extends LazyLoggerSupport with MeterSupport {
 
       reader = Some(new BufferedReader(new InputStreamReader(inputStream)))
 
+      new File(outputFilePath.toString).getParentFile.mkdirs
       Files.copy(inputStream, outputFilePath, REPLACE_EXISTING)
 
       logger.info(s"Saving BLAST result in file: ${outputFilePath.getFileName}")

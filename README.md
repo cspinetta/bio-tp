@@ -22,6 +22,6 @@ The following is an example to run the app:
 ```
 java -jar ./target/scala-2.12/bio-tp.jar
     transcription
-    --input /home/cristian/Documents/Development/bio/bio-tp/src/main/resources/sourcing/INS_mRNA_NM_000207.gb
-    --output /home/cristian/Documents/Development/bio/bio-tp/src/main/resources/output/fasta/exc1.fas
+    --input ./src/main/resources/sourcing/INS_mRNA_NM_000207.gb
+    --output ./target/output/fasta/exc1.fas
 ```

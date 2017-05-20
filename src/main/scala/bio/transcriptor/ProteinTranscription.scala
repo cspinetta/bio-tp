@@ -32,6 +32,7 @@ trait ProteinTranscription extends LazyLoggerSupport with AppEnvConfig {
     }
 
     val outputFile = new File(fastaOutputPath)
+    outputFile.getParentFile.mkdirs
     outputFile.createNewFile()
 
     logger.info(s"Saving protein sequence in FASTA file: ${outputFile.getAbsolutePath}")
