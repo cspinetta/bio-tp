@@ -12,7 +12,7 @@ object AppEnvConfig extends EnvConfig with LazyLoggerSupport {
   val source = SourceApp(envConfiguration.config.getConfig("source"))
   val output = OutputApp(envConfiguration.config.getConfig("output"))
 
-  logger.info(s"Configuration for env ${envConfiguration.currentEnvironment} loads OK")
+  logger.info(s"Configuration loads OK")
 
 }
 

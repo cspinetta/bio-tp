@@ -32,7 +32,7 @@ object ProteinTranscription extends LazyLoggerSupport with AppEnvConfig {
     }
 
     new File(configuration.output.fasta).mkdirs()
-    val outputFile = new File(configuration.output.fasta + File.separator + "ex1.fasta")
+    val outputFile = new File(configuration.output.fasta + File.separator + "ex1.fas")
     outputFile.createNewFile()
 
     logger.info(s"Saving protein sequence in FASTA file: ${outputFile.getAbsolutePath}")
