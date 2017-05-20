@@ -1,0 +1,233 @@
+LOCUS       NM_000207                469 bp    mRNA    linear   PRI 14-MAY-2017
+DEFINITION  Homo sapiens insulin (INS), transcript variant 1, mRNA.
+ACCESSION   NM_000207
+VERSION     NM_000207.2
+KEYWORDS    RefSeq.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 469)
+  AUTHORS   Kobayashi T, Koizumi T, Kobayashi M, Ogura J, Horiuchi Y, Kimura Y,
+            Kondo A, Furugen A, Narumi K, Takahashi N and Iseki K.
+  TITLE     Insulin stimulates transport of organic anion compounds mediated by
+            organic anion transporting polypeptide 2B1 in the human intestinal
+            cell line Caco-2
+  JOURNAL   Drug Metab. Pharmacokinet. 32 (2), 157-163 (2017)
+   PUBMED   28318878
+  REMARK    GeneRIF: results indicate that insulin acts on the small intestine
+            to increase OATP2B1-mediated absorption
+REFERENCE   2  (bases 1 to 469)
+  AUTHORS   Favero-Retto MP, Guerreiro LH, Pessanha CM, Palmieri LC and Lima
+            LM.
+  TITLE     Polymorphic distribution of proteins in solution by mass
+            spectrometry: The analysis of insulin analogues
+  JOURNAL   Biologicals 45, 69-77 (2017)
+   PUBMED   28341309
+  REMARK    GeneRIF: The measurement of commercial insulin allowed the
+            identification of species ranging from monomers to hexamers and
+            their complexes with zinc ions.
+REFERENCE   3  (bases 1 to 469)
+  AUTHORS   Stawerska R, Szalapska M, Borowiec M, Antosik K, Mlynarski W and
+            Lewinski A.
+  TITLE     The influence of INS VNTR class III allele on auxological
+            parameters, glucose, insulin, lipids, and adipocytokines secretion
+            in prepubertal children born small for gestational age
+  JOURNAL   Endokrynol Pol 67 (6), 585-591 (2016)
+   PUBMED   28042651
+  REMARK    GeneRIF: Variant INS VNTR class III was shown not to be associated
+            in any essential way with birth weight in the Polish population.
+            Among prepubertal children born small for gestational age, the
+            presence of INS VNTR class III is related to higher insulin
+            secretion during Oral Glucose Tolerance Test.
+REFERENCE   4  (bases 1 to 469)
+  AUTHORS   Kralovicova J and Vorechovsky I.
+  TITLE     Allele-specific recognition of the 3' splice site of INS intron 1
+  JOURNAL   Hum. Genet. 128 (4), 383-400 (2010)
+   PUBMED   20628762
+  REMARK    GeneRIF: Findings reveal critical interactions underlying the
+            allele-dependent INS expression and INS-mediated risk of T1D
+REFERENCE   5  (bases 1 to 469)
+  AUTHORS   Stead JD, Hurles ME and Jeffreys AJ.
+  TITLE     Global haplotype diversity in the human insulin gene region
+  JOURNAL   Genome Res. 13 (9), 2101-2111 (2003)
+   PUBMED   12952878
+REFERENCE   6  (bases 1 to 469)
+  AUTHORS   De Leon,D.D. and Stanley,C.A.
+  TITLE     Permanent Neonatal Diabetes Mellitus
+  JOURNAL   (in) Pagon RA, Adam MP, Ardinger HH, Wallace SE, Amemiya A, Bean
+            LJH, Bird TD, Ledbetter N, Mefford HC, Smith RJH and Stephens K
+            (Eds.);
+            GENEREVIEWS(R);
+            (1993)
+   PUBMED   20301620
+REFERENCE   7  (bases 1 to 469)
+  AUTHORS   Bell,G.I., Swain,W.F., Pictet,R., Cordell,B., Goodman,H.M. and
+            Rutter,W.J.
+  TITLE     Nucleotide sequence of a cDNA clone encoding human preproinsulin
+  JOURNAL   Nature 282 (5738), 525-527 (1979)
+   PUBMED   503234
+REFERENCE   8  (bases 1 to 469)
+  AUTHORS   Tager,H., Given,B., Baldwin,D., Mako,M., Markese,J., Rubenstein,A.,
+            Olefsky,J., Kobayashi,M., Kolterman,O. and Poucher,R.
+  TITLE     A structurally abnormal insulin causing human diabetes
+  JOURNAL   Nature 281 (5727), 122-125 (1979)
+   PUBMED   381941
+REFERENCE   9  (bases 1 to 469)
+  AUTHORS   Flynn,T.J., Deshmukh,D.S. and Pieringer,R.A.
+  TITLE     Effects of altered thyroid function on galactosyl diacylglycerol
+            metabolism in myelinating rat brain
+  JOURNAL   J. Biol. Chem. 252 (16), 5864-5870 (1977)
+   PUBMED   195962
+REFERENCE   10 (bases 1 to 469)
+  AUTHORS   SANGER,F.
+  TITLE     Chemistry of insulin; determination of the structure of insulin
+            opens the way to greater understanding of life processes
+  JOURNAL   Science 129 (3359), 1340-1344 (1959)
+   PUBMED   13658959
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from BC005255.1 and BM510748.1.
+            This sequence is a reference standard in the RefSeqGene project.
+            On Jun 15, 2006 this sequence version replaced gi:4557670.
+            
+            Summary: After removal of the precursor signal peptide, proinsulin
+            is post-translationally cleaved into three peptides: the B chain
+            and A chain peptides, which are covalently linked via two disulfide
+            bonds to form insulin, and C-peptide. Binding of insulin to the
+            insulin receptor (INSR) stimulates glucose uptake. A multitude of
+            mutant alleles with phenotypic effects have been identified. There
+            is a read-through gene, INS-IGF2, which overlaps with this gene at
+            the 5' region and with the IGF2 gene at the 3' region. Alternative
+            splicing results in multiple transcript variants. [provided by
+            RefSeq, Jun 2010].
+            
+            Transcript Variant: This variant (1) represents the shortest
+            variant. All variants encode the same protein.
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##Evidence-Data-START##
+            Transcript exon combination :: BC005255.1, BU075674.1 [ECO:0000332]
+            RNAseq introns              :: single sample supports all introns
+                                           SAMEA2153347 [ECO:0000348]
+            ##Evidence-Data-END##
+            COMPLETENESS: complete on the 3' end.
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-413               BC005255.1         1-413
+            414-469             BM510748.1         418-473
+FEATURES             Location/Qualifiers
+     source          1..469
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="11"
+                     /map="11p15.5"
+     gene            1..469
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /note="insulin"
+                     /db_xref="GeneID:3630"
+                     /db_xref="HGNC:HGNC:6081"
+                     /db_xref="MIM:176730"
+     exon            1..42
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /inference="alignment:Splign:1.39.8"
+     STS             16..186
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /standard_name="GDB:181496"
+                     /db_xref="UniSTS:155248"
+     exon            43..246
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /inference="alignment:Splign:1.39.8"
+     CDS             60..392
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /note="proinsulin; preproinsulin"
+                     /codon_start=1
+                     /product="insulin preproprotein"
+                     /protein_id="NP_000198.1"
+                     /db_xref="CCDS:CCDS7729.1"
+                     /db_xref="GeneID:3630"
+                     /db_xref="HGNC:HGNC:6081"
+                     /db_xref="MIM:176730"
+                     /translation="MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCG
+                     ERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSL
+                     YQLENYCN"
+     sig_peptide     60..131
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /inference="COORDINATES: ab initio prediction:SignalP:4.0"
+     proprotein      132..389
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /product="proinsulin"
+     mat_peptide     132..221
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /product="insulin B chain"
+     mat_peptide     228..320
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /product="C-peptide"
+     mat_peptide     327..389
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /product="insulin A chain"
+     STS             60..391
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /standard_name="PMC123023P3"
+                     /db_xref="UniSTS:270424"
+     STS             68..368
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /standard_name="PMC21231P1"
+                     /db_xref="UniSTS:272021"
+     STS             72..371
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /standard_name="Ins2"
+                     /db_xref="UniSTS:259556"
+     STS             79..390
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /standard_name="Ins1"
+                     /db_xref="UniSTS:256685"
+     STS             198..385
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /standard_name="PMC24644P6"
+                     /db_xref="UniSTS:265494"
+     exon            247..465
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /inference="alignment:Splign:1.39.8"
+     STS             247..465
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+                     /standard_name="GDB:179433"
+                     /db_xref="UniSTS:155046"
+     regulatory      446..451
+                     /regulatory_class="polyA_signal_sequence"
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+     polyA_site      465
+                     /gene="INS"
+                     /gene_synonym="IDDM; IDDM1; IDDM2; ILPR; IRDN; MODY10"
+ORIGIN      
+        1 agccctccag gacaggctgc atcagaagag gccatcaagc agatcactgt ccttctgcca
+       61 tggccctgtg gatgcgcctc ctgcccctgc tggcgctgct ggccctctgg ggacctgacc
+      121 cagccgcagc ctttgtgaac caacacctgt gcggctcaca cctggtggaa gctctctacc
+      181 tagtgtgcgg ggaacgaggc ttcttctaca cacccaagac ccgccgggag gcagaggacc
+      241 tgcaggtggg gcaggtggag ctgggcgggg gccctggtgc aggcagcctg cagcccttgg
+      301 ccctggaggg gtccctgcag aagcgtggca ttgtggaaca atgctgtacc agcatctgct
+      361 ccctctacca gctggagaac tactgcaact agacgcagcc cgcaggcagc cccacacccg
+      421 ccgcctcctg caccgagaga gatggaataa agcccttgaa ccagcaaaa
+//
+
