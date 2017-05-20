@@ -9,9 +9,9 @@ import org.biojava.nbio.core.sequence.transcription.Frame
 
 import scala.collection.JavaConverters._
 
-object ProteinTranscription extends LazyLoggerSupport with AppEnvConfig {
+trait ProteinTranscription extends LazyLoggerSupport with AppEnvConfig {
 
-  def transcriptFromFile(): Unit = {
+  def transcriptFromFile(): File = {
 
     logger.info("Translation from RNA to the corresponding peptide sequences")
 
@@ -38,6 +38,10 @@ object ProteinTranscription extends LazyLoggerSupport with AppEnvConfig {
     logger.info(s"Saving protein sequence in FASTA file: ${outputFile.getAbsolutePath}")
 
     FastaWriterHelper.writeProteinSequence(outputFile, proteinSeqs.asJavaCollection)
+
+    outputFile
   }
 
 }
+
+object ProteinTranscription extends ProteinTranscription

@@ -22,4 +22,5 @@ case class SourceApp(config: Config) {
 
 case class OutputApp(config: Config) {
   val fasta: String = config.getString("fasta-directory")
+  val blast: String = config.getString("blast-directory")
 }
