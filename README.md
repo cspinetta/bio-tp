@@ -5,19 +5,19 @@ TP Bioinformatica - UTN FRBA
 
 You only need [Java 1.8] to run the release. 
 
-* Translation from mRNA to the corresponding nucleotide sequence: 
+* Translation from mRNA to the corresponding protein sequence: 
 ```
 java -jar ./releases/bio-tp-v1.0.jar \
     transcription \
     --input ./releases/SD1_mRNA_NM_000454.gb \
-    --output ./releases/result/nucleotide_seq.fas
+    --output ./releases/result/protein_seq.fas
 ```
 
-* Search for alignment through NCBI QBlast service: 
+* Search for alignments through NCBI QBlast service: 
 ```
 java -jar ./releases/bio-tp-v1.0.jar \
     alignment \
-    --input ./releases/result/nucleotide_seq.fas \
+    --input ./releases/result/protein_seq.fas \
     --output ./releases/result/alignments.txt \
     --index 1
 ```
