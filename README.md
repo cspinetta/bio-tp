@@ -1,9 +1,7 @@
 TP Bioinformatica - UTN FRBA
 =================================
 
-## Getting Started
-
-### Running as a Script
+## Running as a Script
 
 You only need [Java 1.8] to run the release. 
 
