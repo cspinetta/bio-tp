@@ -24,7 +24,7 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
       case Command.Transcription =>
         ProteinTranscription.transcriptFromFile(config.inputFilePath, config.outputFilePath)
           .recover { case exc: Throwable =>
-            logger.error("Failed trying to generate the nucleotide sequence", exc) }
+            logger.error("Failed trying to generate the protein sequence", exc) }
       case Command.Alignment =>
         BlastService.process(config.inputFilePath, config.outputFilePath, config.sequenceIndex.get)
           .recover { case exc: Throwable =>
@@ -67,7 +67,7 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
             .required(),
           opt[Int]('i', "index")
             .action((x, c) => c.copy(sequenceIndex = Some(x)))
-            .text("index in nucleotide sequence")
+            .text("index in protein sequence")
             .required()
         )
 
