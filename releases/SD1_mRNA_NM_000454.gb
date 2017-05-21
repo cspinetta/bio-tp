@@ -1,0 +1,408 @@
+LOCUS       NM_000454                981 bp    mRNA    linear   PRI 07-MAY-2017
+DEFINITION  Homo sapiens superoxide dismutase 1 (SOD1), mRNA.
+ACCESSION   NM_000454
+VERSION     NM_000454.4
+KEYWORDS    RefSeq.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 981)
+  AUTHORS   Yu H, Sun SQ, Gu XB, Wang W and Gao XS.
+  TITLE     Atorvastatin prolongs the lifespan of radiationinduced reactive
+            oxygen species in PC-3 prostate cancer cells to enhance the cell
+            killing effect
+  JOURNAL   Oncol. Rep. 37 (4), 2049-2056 (2017)
+   PUBMED   28260074
+  REMARK    GeneRIF: The ROS levels of the study group decreased obviously
+            before irradiation (P<0.01), however, the radiation-induced ROS of
+            the study group was at a high level even when irradiation had been
+            terminated for 2 h (P<0.01). Moreover, NOX2 and NOX4 levels and
+            total SOD activity decreased (P<0.01), while the levels of SOD1
+            were stably maintained (P>0.05).
+REFERENCE   2  (bases 1 to 981)
+  AUTHORS   Wieczorek E, Jablonowski Z, Tomasik B, Gromadzinska J, Jablonska E,
+            Konecki T, Fendler W, Sosnowski M, Wasowicz W and Reszka E.
+  TITLE     Different Gene Expression and Activity Pattern of Antioxidant
+            Enzymes in Bladder Cancer
+  JOURNAL   Anticancer Res. 37 (2), 841-848 (2017)
+   PUBMED   28179340
+  REMARK    GeneRIF: Data show that antioxidant enzymes SOD2 and GPX1
+            expression and GPX1 and SOD1 activity were significantly higher in
+            patients at diagnosis of bladder cancer (BC) in comparison to
+            controls.
+REFERENCE   3  (bases 1 to 981)
+  AUTHORS   Shi C, Chen X, Liu Z, Meng R, Zhao X, Liu Z and Guo N.
+  TITLE     Oleuropein protects L-02 cells against H2O2-induced oxidative
+            stress by increasing SOD1, GPx1 and CAT expression
+  JOURNAL   Biomed. Pharmacother. 85, 740-748 (2017)
+   PUBMED   27914828
+  REMARK    GeneRIF: The effects of oleuropein (OL) on hydrogen
+            peroxide-induced oxidative stress in L02 cells showed that SOD1,
+            GPx1, and catalase levels were all increased, and suggested that OL
+            is a potent antioxidant and may be therapeutically useful in liver
+            disease prevention.
+REFERENCE   4  (bases 1 to 981)
+  AUTHORS   Healy EF and Cervantes L.
+  TITLE     An in silico study of the effect of SOD1 electrostatic loop
+            dynamics on amyloidlike filament formation
+  JOURNAL   Eur. Biophys. J. 45 (8), 853-859 (2016)
+   PUBMED   27496206
+  REMARK    GeneRIF: a structural model for protofibril capping of SOD1
+            filaments by alphaB-crystallin
+REFERENCE   5  (bases 1 to 981)
+  AUTHORS   Sharapov MG, Goncharov RG, Gordeeva AE, Novoselov VI, Antonova OA,
+            Tikhaze AK and Lankin VZ.
+  TITLE     Enzymatic antioxidant system of endotheliocytes
+  JOURNAL   Dokl. Biochem. Biophys. 471 (1), 410-412 (2016)
+   PUBMED   28058676
+  REMARK    GeneRIF: Study showed that endothelial cells from human umbilical
+            vein have a reduced activity and gene expression of the 'classic'
+            antioxidant enzymes (Cu,Zn-superoxide dismutase, catalase, and
+            Se-containing glutathione peroxidase). At the same time, a high
+            expression level of peroxiredoxin genes was identified in the same
+            endothelial cells
+REFERENCE   6  (bases 1 to 981)
+  AUTHORS   Kinsley,L. and Siddique,T.
+  TITLE     Amyotrophic Lateral Sclerosis Overview
+  JOURNAL   (in) Pagon RA, Adam MP, Ardinger HH, Wallace SE, Amemiya A, Bean
+            LJH, Bird TD, Ledbetter N, Mefford HC, Smith RJH and Stephens K
+            (Eds.);
+            GENEREVIEWS(R);
+            (1993)
+   PUBMED   20301623
+REFERENCE   7  (bases 1 to 981)
+  AUTHORS   Crapo JD, Oury T, Rabouille C, Slot JW and Chang LY.
+  TITLE     Copper,zinc superoxide dismutase is primarily a cytosolic protein
+            in human cells
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 89 (21), 10405-10409 (1992)
+   PUBMED   1332049
+REFERENCE   8  (bases 1 to 981)
+  AUTHORS   Parge HE, Hallewell RA and Tainer JA.
+  TITLE     Atomic structures of wild-type and thermostable mutant recombinant
+            human Cu,Zn superoxide dismutase
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 89 (13), 6109-6113 (1992)
+   PUBMED   1463506
+  REMARK    Erratum:[Proc Natl Acad Sci U S A 1992 Nov 15;89(22):11106]
+REFERENCE   9  (bases 1 to 981)
+  AUTHORS   Kajihara J, Enomoto M, Nishijima K, Yabuuchi M and Katoh K.
+  TITLE     Comparison of properties between human recombinant and placental
+            copper-zinc SOD
+  JOURNAL   J. Biochem. 104 (5), 851-854 (1988)
+   PUBMED   2853161
+REFERENCE   10 (bases 85 to 644)
+  AUTHORS   Sherman,L., Dafni,N., Lieman-Hurwitz,J. and Groner,Y.
+  TITLE     Nucleotide sequence and expression of human chromosome 21-encoded
+            superoxide dismutase mRNA
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 80 (18), 5465-5469 (1983)
+   PUBMED   6577438
+REFERENCE   11 (bases 1 to 981)
+  AUTHORS   Philip,T., Fraisse,J., Sinet,P.M., Lauras,B., Robert,J.M. and
+            Freycon,F.
+  TITLE     Confirmation of the assignment of the human SODS gene to chromosome
+            21q22
+  JOURNAL   Cytogenet. Cell Genet. 22 (1-6), 521-523 (1978)
+   PUBMED   752535
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from W17182.1, AV756797.1,
+            BC001034.1, X02317.1 and CA448539.1.
+            This sequence is a reference standard in the RefSeqGene project.
+            On Jun 16, 2004 this sequence version replaced gi:40255241.
+            
+            Summary: The protein encoded by this gene binds copper and zinc
+            ions and is one of two isozymes responsible for destroying free
+            superoxide radicals in the body. The encoded isozyme is a soluble
+            cytoplasmic protein, acting as a homodimer to convert
+            naturally-occuring but harmful superoxide radicals to molecular
+            oxygen and hydrogen peroxide. The other isozyme is a mitochondrial
+            protein. Mutations in this gene have been implicated as causes of
+            familial amyotrophic lateral sclerosis. Rare transcript variants
+            have been reported for this gene. [provided by RefSeq, Jul 2008].
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##Evidence-Data-START##
+            Transcript exon combination :: SRR1163657.518836.1,
+                                           ERR279842.10182.1 [ECO:0000332]
+            RNAseq introns              :: single sample supports all introns
+                                           SAMEA1965299, SAMEA1966682
+                                           [ECO:0000348]
+            ##Evidence-Data-END##
+            COMPLETENESS: complete on the 3' end.
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-45                W17182.1           1-45
+            46-81               AV756797.1         70-105
+            82-84               BC001034.1         1-3
+            85-956              X02317.1           1-872
+            957-981             CA448539.1         1-25                c
+FEATURES             Location/Qualifiers
+     source          1..981
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="21"
+                     /map="21q22.11"
+     gene            1..981
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /note="superoxide dismutase 1"
+                     /db_xref="GeneID:6647"
+                     /db_xref="HGNC:HGNC:11179"
+                     /db_xref="MIM:147450"
+     exon            1..220
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /inference="alignment:Splign:1.39.8"
+     STS             40..222
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /standard_name="GDB:374780"
+                     /db_xref="UniSTS:156962"
+     misc_feature    140..142
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /note="upstream in-frame stop codon"
+     CDS             149..613
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /EC_number="1.15.1.1"
+                     /note="indophenoloxidase A; SOD, soluble; superoxide
+                     dismutase, cystolic; Cu/Zn superoxide dismutase;
+                     epididymis secretory protein Li 44; superoxide dismutase
+                     1, soluble"
+                     /codon_start=1
+                     /product="superoxide dismutase [Cu-Zn]"
+                     /protein_id="NP_000445.1"
+                     /db_xref="CCDS:CCDS33536.1"
+                     /db_xref="GeneID:6647"
+                     /db_xref="HGNC:HGNC:11179"
+                     /db_xref="MIM:147450"
+                     /translation="MATKAVCVLKGDGPVQGIINFEQKESNGPVKVWGSIKGLTEGLH
+                     GFHVHEFGDNTAGCTSAGPHFNPLSRKHGGPKDEERHVGDLGNVTADKDGVADVSIED
+                     SVISLSGDHCIIGRTLVVHEKADDLGKGGNEESTKTGNAGSRLACGVIGIAQ"
+     misc_feature    152..154
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N-acetylalanine. {ECO:0000244|PubMed:25944712,
+                     ECO:0000269|PubMed:1463506, ECO:0000269|PubMed:7002610};
+                     propagated from UniProtKB/Swiss-Prot (P00441.2);
+                     acetylation site"
+     misc_feature    158..160
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-succinyllysine. {ECO:0000250|UniProtKB:P08228};
+                     propagated from UniProtKB/Swiss-Prot (P00441.2); modified
+                     site"
+     misc_feature    176..178
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-succinyllysine. {ECO:0000250|UniProtKB:P08228};
+                     propagated from UniProtKB/Swiss-Prot (P00441.2); modified
+                     site"
+     misc_feature    422..424
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-succinyllysine. {ECO:0000250|UniProtKB:P08228};
+                     propagated from UniProtKB/Swiss-Prot (P00441.2); modified
+                     site"
+     misc_feature    443..445
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine. {ECO:0000244|PubMed:18669648,
+                     ECO:0000244|PubMed:20068231, ECO:0000244|PubMed:24275569};
+                     propagated from UniProtKB/Swiss-Prot (P00441.2);
+                     phosphorylation site"
+     misc_feature    455..457
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine. {ECO:0000244|PubMed:24275569};
+                     propagated from UniProtKB/Swiss-Prot (P00441.2);
+                     phosphorylation site"
+     misc_feature    464..466
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine. {ECO:0000250|UniProtKB:P07632};
+                     propagated from UniProtKB/Swiss-Prot (P00441.2);
+                     phosphorylation site"
+     misc_feature    470..472
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine. {ECO:0000250|UniProtKB:P08228};
+                     propagated from UniProtKB/Swiss-Prot (P00441.2);
+                     phosphorylation site"
+     misc_feature    515..517
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-acetyllysine, alternate.
+                     {ECO:0000244|PubMed:19608861}; propagated from
+                     UniProtKB/Swiss-Prot (P00441.2); acetylation site"
+     misc_feature    515..517
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-succinyllysine, alternate.
+                     {ECO:0000269|PubMed:24140062}; propagated from
+                     UniProtKB/Swiss-Prot (P00441.2); modified site"
+     misc_feature    557..559
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-acetyllysine, alternate.
+                     {ECO:0000250|UniProtKB:P08228}; propagated from
+                     UniProtKB/Swiss-Prot (P00441.2); acetylation site"
+     misc_feature    557..559
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-succinyllysine, alternate.
+                     {ECO:0000250|UniProtKB:P08228}; propagated from
+                     UniProtKB/Swiss-Prot (P00441.2); modified site"
+     STS             158..403
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /standard_name="Sod1"
+                     /db_xref="UniSTS:144477"
+     exon            221..317
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /inference="alignment:Splign:1.39.8"
+     exon            318..387
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /inference="alignment:Splign:1.39.8"
+     STS             327..427
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /standard_name="MARC_26673-26674:1036188363:1"
+                     /db_xref="UniSTS:269054"
+     exon            388..505
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /inference="alignment:Splign:1.39.8"
+     exon            506..966
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /inference="alignment:Splign:1.39.8"
+     STS             612..864
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /standard_name="SHGC-87564"
+                     /db_xref="UniSTS:30768"
+     STS             618..918
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /standard_name="GDB:185171"
+                     /db_xref="UniSTS:155426"
+     STS             638..848
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /standard_name="SOD1"
+                     /db_xref="UniSTS:479785"
+     regulatory      691..696
+                     /regulatory_class="polyA_signal_sequence"
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+     STS             695..886
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /standard_name="G20764"
+                     /db_xref="UniSTS:41750"
+     polyA_site      712
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+     STS             730..882
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /standard_name="G34694"
+                     /db_xref="UniSTS:78956"
+     regulatory      940..945
+                     /regulatory_class="polyA_signal_sequence"
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+     polyA_site      961
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+     polyA_site      966
+                     /gene="SOD1"
+                     /gene_synonym="ALS; ALS1; HEL-S-44; homodimer; hSod1;
+                     IPOA; SOD"
+ORIGIN      
+        1 gtttggggcc agagtgggcg aggcgcggag gtctggccta taaagtagtc gcggagacgg
+       61 ggtgctggtt tgcgtcgtag tctcctgcag cgtctggggt ttccgttgca gtcctcggaa
+      121 ccaggacctc ggcgtggcct agcgagttat ggcgacgaag gccgtgtgcg tgctgaaggg
+      181 cgacggccca gtgcagggca tcatcaattt cgagcagaag gaaagtaatg gaccagtgaa
+      241 ggtgtgggga agcattaaag gactgactga aggcctgcat ggattccatg ttcatgagtt
+      301 tggagataat acagcaggct gtaccagtgc aggtcctcac tttaatcctc tatccagaaa
+      361 acacggtggg ccaaaggatg aagagaggca tgttggagac ttgggcaatg tgactgctga
+      421 caaagatggt gtggccgatg tgtctattga agattctgtg atctcactct caggagacca
+      481 ttgcatcatt ggccgcacac tggtggtcca tgaaaaagca gatgacttgg gcaaaggtgg
+      541 aaatgaagaa agtacaaaga caggaaacgc tggaagtcgt ttggcttgtg gtgtaattgg
+      601 gatcgcccaa taaacattcc cttggatgta gtctgaggcc ccttaactca tctgttatcc
+      661 tgctagctgt agaaatgtat cctgataaac attaaacact gtaatcttaa aagtgtaatt
+      721 gtgtgacttt ttcagagttg ctttaaagta cctgtagtga gaaactgatt tatgatcact
+      781 tggaagattt gtatagtttt ataaaactca gttaaaatgt ctgtttcaat gacctgtatt
+      841 ttgccagact taaatcacag atgggtatta aacttgtcag aatttctttg tcattcaagc
+      901 ctgtgaataa aaaccctgta tggcacttat tatgaggcta ttaaaagaat ccaaattcaa
+      961 actaaaaaaa aaaaaaaaaa a
+//
+

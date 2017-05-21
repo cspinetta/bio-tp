@@ -2,16 +2,17 @@ package bio.transcriptor
 
 import java.io.File
 
-import base.LazyLoggerSupport
+import base.{FileUtilsSupport, LazyLoggerSupport}
 import base.conf.AppEnvConfig
 import org.biojava.nbio.core.sequence.io.{FastaWriterHelper, GenbankReaderHelper}
 import org.biojava.nbio.core.sequence.transcription.Frame
 
 import scala.collection.JavaConverters._
+import scala.util.Try
 
-trait ProteinTranscription extends LazyLoggerSupport with AppEnvConfig {
+trait ProteinTranscription extends LazyLoggerSupport with AppEnvConfig with FileUtilsSupport {
 
-  def transcriptFromFile(mRNAFilePath: String, fastaOutputPath: String): File = {
+  def transcriptFromFile(mRNAFilePath: String, fastaOutputPath: String): Try[File] = Try {
 
     logger.info("Translation from RNA to the corresponding peptide sequences")
 
@@ -31,9 +32,7 @@ trait ProteinTranscription extends LazyLoggerSupport with AppEnvConfig {
       proteinSeq
     }
 
-    val outputFile = new File(fastaOutputPath)
-    outputFile.getParentFile.mkdirs
-    outputFile.createNewFile()
+    val outputFile = fileUtils.getWriteableFile(fastaOutputPath)
 
     logger.info(s"Saving protein sequence in FASTA file: ${outputFile.getAbsolutePath}")
 

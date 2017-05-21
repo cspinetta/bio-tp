@@ -11,10 +11,11 @@ import org.biojava.nbio.core.sequence.io.util.IOUtils
 import org.biojava.nbio.ws.alignment.qblast._
 
 import scala.collection.JavaConverters._
+import scala.util.Try
 
 trait BlastService extends LazyLoggerSupport with MeterSupport {
 
-  def process(fastaInput: String, outputPath: String): String = {
+  def process(fastaInput: String, outputPath: String): Try[String] = Try {
     val blastService = new NCBIQBlastService()
     val outputFilePath = Paths.get(outputPath)
 
