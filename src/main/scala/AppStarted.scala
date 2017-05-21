@@ -7,7 +7,8 @@ import scala.language.postfixOps
 
 case class Config(command: Command.Value = Command.NoOp,
                   inputFilePath: String = "",
-                  outputFilePath: String = "")
+                  outputFilePath: String = "",
+                  sequenceIndex: Option[Int] = None)
 
 object Command extends Enumeration {
   type Command = Value
@@ -25,7 +26,7 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
           .recover { case exc: Throwable =>
             logger.error("Failed trying to generate the nucleotide sequence", exc) }
       case Command.Alignment =>
-        BlastService.process(config.inputFilePath, config.outputFilePath)
+        BlastService.process(config.inputFilePath, config.outputFilePath, config.sequenceIndex.get)
           .recover { case exc: Throwable =>
             logger.error("Failed trying to generate alignment", exc) }
     }
@@ -63,6 +64,10 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
           opt[String]('o', "output")
             .action((x, c) => c.copy(outputFilePath = x))
             .text("The path to the output file")
+            .required(),
+          opt[Int]('i', "index")
+            .action((x, c) => c.copy(sequenceIndex = Some(x)))
+            .text("index in nucleotide sequence")
             .required()
         )
 

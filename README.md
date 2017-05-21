@@ -17,16 +17,17 @@ You only need `Java SE 1.8` to run the release.
 ```
 java -jar ./releases/bio-tp-v1.0.jar \
     transcription \
-    --input ./releases/INS_mRNA_NM_000207.gb \
-    --output ./target/output/exc1.fas
+    --input ./releases/SD1_mRNA_NM_000454.gb \
+    --output ./releases/result/nucleotide_seq.fas
 ```
 
 * Search for alignment through NCBI QBlast service: 
 ```
 java -jar ./releases/bio-tp-v1.0.jar \
     alignment \
-    --input ./target/output/exc1.fas \
-    --output ./target/output/exc2.fas
+    --input ./releases/result/nucleotide_seq.fas \
+    --output ./releases/result/alignments.txt \
+    --index 1
 ```
 
 ### Building the app

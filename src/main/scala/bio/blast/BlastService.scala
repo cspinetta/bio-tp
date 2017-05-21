@@ -15,7 +15,7 @@ import scala.util.Try
 
 trait BlastService extends LazyLoggerSupport with MeterSupport {
 
-  def process(fastaInput: String, outputPath: String): Try[String] = Try {
+  def process(fastaInput: String, outputPath: String, sampleIndex: Int): Try[String] = Try {
     val blastService = new NCBIQBlastService()
     val outputFilePath = Paths.get(outputPath)
 
@@ -23,7 +23,8 @@ trait BlastService extends LazyLoggerSupport with MeterSupport {
 
     val proteinSeq = FastaReaderHelper.readFastaProteinSequence(fastaFile)
 
-    val withRightElORF: ProteinSequence = proteinSeq.asScala.values.head
+    val withRightElORF: ProteinSequence = proteinSeq.asScala.values.toSeq.lift(sampleIndex - 1)
+      .getOrElse(throw new RuntimeException(s"Sequence Index is out of bound: [1, ${proteinSeq.size()}]"))
 
     val alignmentProp = new NCBIQBlastAlignmentProperties()
 
