@@ -9,7 +9,7 @@ You only need [Java 1.8] to run the release.
 ```
 java -jar ./releases/bio-tp-v1.0.jar \
     transcription \
-    --input ./releases/SD1_mRNA_NM_000454.gb \
+    --input ./releases/SOD1_mRNA_NM_000454.gb \
     --output ./releases/result/protein_seq.fas
 ```
 
@@ -18,7 +18,7 @@ java -jar ./releases/bio-tp-v1.0.jar \
 java -jar ./releases/bio-tp-v1.0.jar \
     alignment \
     --input ./releases/result/protein_seq.fas \
-    --output ./releases/result/alignments.txt \
+    --output ./releases/result/alignments_1.txt \
     --index 1
 ```
 
