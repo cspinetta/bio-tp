@@ -63,7 +63,7 @@ trait BlastService extends LazyLoggerSupport with MeterSupport {
 
     } finally reader.foreach(IOUtils.close)
 
-    logger.info(s"Alignments via NCBI QBlast Service finished successfully. Result stored in $outputPath")
+    logger.info(s"Alignments via NCBI QBlast Service finished successfully. Result saved in $outputPath")
   }
 
   def processWithLocalBlast(fastaInput: String, outputPath: String, dbPath: String): Try[Unit] = Try {
@@ -75,7 +75,7 @@ trait BlastService extends LazyLoggerSupport with MeterSupport {
     // drain command output
     logger.info(s"Command output: \r${processLogger.generateOutput}")
     if (result != 0) throw new RuntimeException(s"Command `$cmd` finished with code error: $result")
-    else logger.info(s"Alignments via local DB finished successfully. Result stored in $outputPath")
+    else logger.info(s"Alignments via local DB finished successfully. Result saved in $outputPath")
   }
 
 }
