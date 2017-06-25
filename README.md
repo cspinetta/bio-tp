@@ -31,6 +31,10 @@ java -jar ./releases/bio-tp-v1.0.jar \
     --dbpath /path/to/db
 ```
 
+** In order to search alignments with a local DB you need to have
+ in your local `blastall` with `blastp` program installed and the
+ `swissprot` DB with Blast formatted.
+
 ## Building the app
 
 *Development dependencies:*
@@ -44,6 +48,12 @@ You need to generate a Fat Jar with Assembly:
 * Run `sbt assembly` from the project root.
 
 The fully executable JAR will be in `/target/scala-2.12/` ready to rock.
+
+## How to get Blast and the swissprot DB in your local
+
+[Exposed by NCBI](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download)
+```
+```
 
 
 [JDK 1.8]:http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
