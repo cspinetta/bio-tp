@@ -11,11 +11,12 @@ import org.biojava.nbio.core.sequence.io.util.IOUtils
 import org.biojava.nbio.ws.alignment.qblast._
 
 import scala.collection.JavaConverters._
+import scala.sys.process.ProcessLogger
 import scala.util.Try
 
 trait BlastService extends LazyLoggerSupport with MeterSupport {
 
-  def process(fastaInput: String, outputPath: String, sampleIndex: Int): Try[String] = Try {
+  def processWithRemoteService(fastaInput: String, outputPath: String, sampleIndex: Int): Try[Unit] = Try {
     val blastService = new NCBIQBlastService()
     val outputFilePath = Paths.get(outputPath)
 
@@ -62,10 +63,30 @@ trait BlastService extends LazyLoggerSupport with MeterSupport {
 
     } finally reader.foreach(IOUtils.close)
 
-    outputFilePath.toString
+    logger.info(s"Alignments via NCBI QBlast Service finished successfully. Result stored in $outputPath")
+  }
 
+  def processWithLocalBlast(fastaInput: String, outputPath: String, dbPath: String): Try[Unit] = Try {
+    import sys.process._
+    val cmd = s"blastall -p blastp -d $dbPath -i $fastaInput -o $outputPath"
+    val processLogger = BlastProcessLogger()
+    logger.info(s"Executing `$cmd`...")
+    val result = cmd ! processLogger
+    // drain command output
+    logger.info(s"Command output: \r${processLogger.generateOutput}")
+    if (result != 0) throw new RuntimeException(s"Command `$cmd` finished with code error: $result")
+    else logger.info(s"Alignments via local DB finished successfully. Result stored in $outputPath")
   }
 
 }
 
 object BlastService extends BlastService
+
+case class BlastProcessLogger() extends ProcessLogger {
+  private val buffer: StringBuilder = new StringBuilder()
+  def out(s: => String): Unit = buffer.append(s)
+  def err(s: => String): Unit = buffer.append(s)
+  def buffer[T](f: => T): T = f
+
+  def generateOutput: String = buffer.toString()
+}

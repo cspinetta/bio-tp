@@ -8,7 +8,9 @@ import scala.language.postfixOps
 case class Config(command: Command.Value = Command.NoOp,
                   inputFilePath: String = "",
                   outputFilePath: String = "",
-                  sequenceIndex: Option[Int] = None)
+                  sequenceIndex: Option[Int] = None,
+                  localService: Boolean = false,
+                  dbPath: Option[String] = None)
 
 object Command extends Enumeration {
   type Command = Value
@@ -25,10 +27,14 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
         ProteinTranscription.transcriptFromFile(config.inputFilePath, config.outputFilePath)
           .recover { case exc: Throwable =>
             logger.error("Failed trying to generate the protein sequence", exc) }
-      case Command.Alignment =>
-        BlastService.process(config.inputFilePath, config.outputFilePath, config.sequenceIndex.get)
+      case Command.Alignment if config.localService =>
+        BlastService.processWithLocalBlast(config.inputFilePath, config.outputFilePath, config.dbPath.get)
           .recover { case exc: Throwable =>
-            logger.error("Failed trying to generate alignment", exc) }
+            logger.error("Failed trying to generate alignment from local service", exc) }
+      case _ =>
+        BlastService.processWithRemoteService(config.inputFilePath, config.outputFilePath, config.sequenceIndex.get)
+          .recover { case exc: Throwable =>
+            logger.error("Failed trying to generate alignment from remote service", exc) }
     }
   )
 
@@ -67,12 +73,28 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
             .required(),
           opt[Int]('i', "index")
             .action((x, c) => c.copy(sequenceIndex = Some(x)))
-            .text("index in protein sequence")
-            .required()
+            .text("index in protein sequence (only for remote service)"),
+          cmd("local")
+            .action((_, c) => c.copy(localService = true))
+            .text("Using local DB...")
+            .children(
+              opt[String]('d', "dbpath")
+                .action((x, c) => c.copy(dbPath = Some(x)))
+                .text("Local DB path to use with Blast")
+                .required()
+          )
         )
 
       checkConfig( c =>
-        if (c.command == Command.NoOp) failure("You must to especify a command: transcription or alignment")
+        if (c.command == Command.NoOp) failure("You must indicate a command: transcription or alignment")
+        else success )
+
+      checkConfig( c =>
+        if (c.command == Command.Alignment && c.localService && c.dbPath.isEmpty) failure("You must provide a local DB path to use with Blast tool")
+        else success )
+
+      checkConfig( c =>
+        if (c.command == Command.Alignment && !c.localService && c.sequenceIndex.isEmpty) failure("You must indicate what index use from fasta file")
         else success )
     }
     parser.parse(args, Config())

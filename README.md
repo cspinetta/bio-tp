@@ -13,13 +13,22 @@ java -jar ./releases/bio-tp-v1.0.jar \
     --output ./releases/result/protein_seq.fas
 ```
 
-* Search for alignments through NCBI QBlast service: 
+* Search for alignments via _NCBI QBlast service_: 
 ```
 java -jar ./releases/bio-tp-v1.0.jar \
     alignment \
     --input ./releases/result/protein_seq.fas \
     --output ./releases/result/alignments_1.txt \
     --index 1
+```
+
+* Search for alignments via _Local DB_: 
+```
+java -jar ./releases/bio-tp-v1.0.jar \
+    alignment local \
+    --input ./releases/result/protein_seq.fas \
+    --output ./releases/result/alignments_1.txt \
+    --dbpath /path/to/db
 ```
 
 ## Building the app
