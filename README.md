@@ -35,6 +35,14 @@ java -jar ./releases/bio-tp-v1.0.jar \
  in your local `blastall` with `blastp` program installed and the
  `swissprot` DB with Blast formatted.
 
+* Search for protein translations via _EMBOSS coderest_: 
+```
+java -jar ./releases/bio-tp-v1.0.jar \
+    emboss-translation \
+    --input ./releases/SOD1_mRNA_NM_000454.gb \
+    --output ./releases/result/translations_from_emboss \
+    --embossdir /path/to/emboss/programs
+
 ## Building the app
 
 *Development dependencies:*
