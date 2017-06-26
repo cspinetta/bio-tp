@@ -130,7 +130,7 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
         )
 
       checkConfig( c =>
-        if (c.command == Command.NoOp) failure("You must indicate a command: transcription or alignment")
+        if (c.command == Command.NoOp) failure("You must indicate a command: transcription / alignment / emboss-translation / emboss-motifs")
         else success )
 
       checkConfig( c =>
