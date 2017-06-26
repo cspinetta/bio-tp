@@ -4,14 +4,13 @@ import java.io.{BufferedReader, File, InputStreamReader}
 import java.nio.file.StandardCopyOption.REPLACE_EXISTING
 import java.nio.file.{Files, Paths}
 
-import base.{LazyLoggerSupport, MeterSupport}
+import base.{CmdExecutor, LazyLoggerSupport, MeterSupport}
 import org.biojava.nbio.core.sequence.ProteinSequence
 import org.biojava.nbio.core.sequence.io.FastaReaderHelper
 import org.biojava.nbio.core.sequence.io.util.IOUtils
 import org.biojava.nbio.ws.alignment.qblast._
 
 import scala.collection.JavaConverters._
-import scala.sys.process.ProcessLogger
 import scala.util.Try
 
 trait BlastService extends LazyLoggerSupport with MeterSupport {
@@ -67,26 +66,11 @@ trait BlastService extends LazyLoggerSupport with MeterSupport {
   }
 
   def processWithLocalBlast(fastaInput: String, outputPath: String, dbPath: String): Try[Unit] = Try {
-    import sys.process._
-    val cmd = s"blastall -p blastp -d $dbPath -i $fastaInput -o $outputPath"
-    val processLogger = BlastProcessLogger()
-    logger.info(s"Executing `$cmd`...")
-    val result = cmd ! processLogger
-    // drain command output
-    logger.info(s"Command output: \r${processLogger.generateOutput}")
-    if (result != 0) throw new RuntimeException(s"Command `$cmd` finished with code error: $result")
-    else logger.info(s"Alignments via local DB finished successfully. Result saved in $outputPath")
+    val cmdExecutor = CmdExecutor(s"blastall -p blastp -d $dbPath -i $fastaInput -o $outputPath")
+    cmdExecutor.unsafeExecute
+    logger.info(s"Alignments via local DB finished successfully. Result saved in $outputPath")
   }
 
 }
 
 object BlastService extends BlastService
-
-case class BlastProcessLogger() extends ProcessLogger {
-  private val buffer: StringBuilder = new StringBuilder()
-  def out(s: => String): Unit = buffer.append(s)
-  def err(s: => String): Unit = buffer.append(s)
-  def buffer[T](f: => T): T = f
-
-  def generateOutput: String = buffer.toString()
-}

@@ -1,6 +1,7 @@
 import base.LazyLoggerSupport
 import base.conf.AppEnvConfig
 import bio.blast.BlastService
+import bio.emboss.EmbossService
 import bio.transcriptor.ProteinTranscription
 
 import scala.language.postfixOps
@@ -10,11 +11,12 @@ case class Config(command: Command.Value = Command.NoOp,
                   outputFilePath: String = "",
                   sequenceIndex: Option[Int] = None,
                   localService: Boolean = false,
-                  dbPath: Option[String] = None)
+                  dbPath: Option[String] = None,
+                  embossPath: Option[String] = None)
 
 object Command extends Enumeration {
   type Command = Value
-  val Transcription, Alignment, NoOp = Value
+  val Transcription, Alignment, EmbossTranslation, NoOp = Value
 }
 
 object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
@@ -31,10 +33,14 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
         BlastService.processWithLocalBlast(config.inputFilePath, config.outputFilePath, config.dbPath.get)
           .recover { case exc: Throwable =>
             logger.error("Failed trying to generate alignment from local service", exc) }
-      case _ =>
+      case Command.Alignment =>
         BlastService.processWithRemoteService(config.inputFilePath, config.outputFilePath, config.sequenceIndex.get)
           .recover { case exc: Throwable =>
             logger.error("Failed trying to generate alignment from remote service", exc) }
+      case Command.EmbossTranslation =>
+        EmbossService.extractProteinSequence(config.embossPath.get, config.inputFilePath, config.outputFilePath)
+          .recover { case exc: Throwable =>
+            logger.error("Failed trying to generate transalations via local EMBOSS (program coderest)", exc) }
     }
   )
 
@@ -83,6 +89,23 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
                 .text("Local DB path to use with Blast")
                 .required()
           )
+        )
+
+      cmd("emboss-translation")
+        .action((_, c) => c.copy(command = Command.EmbossTranslation))
+        .text("Generate protein translations via EMBOSS coderest")
+        .children(
+          opt[String]('i', "input")
+            .action((x, c) => c.copy(inputFilePath = x))
+            .text("The path to the input file")
+            .required(),
+          opt[String]('o', "output")
+            .action((x, c) => c.copy(outputFilePath = x))
+            .text("The path to the output file")
+            .required(),
+          opt[String]('e', "embossdir")
+            .action((x, c) => c.copy(embossPath = Some(x)))
+            .text("EMBOSS directory path")
         )
 
       checkConfig( c =>
