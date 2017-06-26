@@ -22,6 +22,18 @@ trait EmbossService extends LazyLoggerSupport with MeterSupport {
 
     logger.info(s"Translations via EMBOSS coderest finished successfully. Result saved in $translationsOutput")
   }
+
+  def calculateMotifs(embossPath: String, proteinInput: String, outputPath: String): Try[Unit] = Try {
+    val patmatmotifsPath = Paths.get(embossPath.toString).resolve("patmatmotifs")
+    if (!new File(patmatmotifsPath.toUri).isFile) throw new RuntimeException(s"$embossPath is not a valid directory")
+
+    val cmdExecutor = CmdExecutor(
+      s"$patmatmotifsPath -sequence $proteinInput -outfile $outputPath")
+
+    cmdExecutor.unsafeExecute
+
+    logger.info(s"Calculated motifs via EMBOSS patmatmotifs finished successfully. Result saved in $outputPath")
+  }
 }
 
 object EmbossService extends EmbossService

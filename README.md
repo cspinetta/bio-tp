@@ -42,6 +42,16 @@ java -jar ./releases/bio-tp-v1.0.jar \
     --input ./releases/SOD1_mRNA_NM_000454.gb \
     --output ./releases/result/translations_from_emboss \
     --embossdir /path/to/emboss/programs
+```
+
+* Search for motifs from protein translations via _EMBOSS patmatmotifs_: 
+```
+java -jar ./releases/bio-tp-v1.0.jar \
+    emboss-motifs \
+    --input ./releases/result/translations_from_emboss.prot \
+    --output ./releases/result/result.motifs \
+    --embossdir /path/to/emboss/programs
+```
 
 ## Building the app
 

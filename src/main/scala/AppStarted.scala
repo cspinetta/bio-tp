@@ -16,7 +16,7 @@ case class Config(command: Command.Value = Command.NoOp,
 
 object Command extends Enumeration {
   type Command = Value
-  val Transcription, Alignment, EmbossTranslation, NoOp = Value
+  val Transcription, Alignment, EmbossTranslation, EmbossMotifs, NoOp = Value
 }
 
 object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
@@ -41,6 +41,10 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
         EmbossService.extractProteinSequence(config.embossPath.get, config.inputFilePath, config.outputFilePath)
           .recover { case exc: Throwable =>
             logger.error("Failed trying to generate transalations via local EMBOSS (program coderest)", exc) }
+      case Command.EmbossMotifs =>
+        EmbossService.calculateMotifs(config.embossPath.get, config.inputFilePath, config.outputFilePath)
+          .recover { case exc: Throwable =>
+            logger.error("Failed trying to calculate the motifs via local EMBOSS (program patmatmotifs)", exc) }
     }
   )
 
@@ -94,6 +98,23 @@ object AppStarted extends App with AppEnvConfig with LazyLoggerSupport {
       cmd("emboss-translation")
         .action((_, c) => c.copy(command = Command.EmbossTranslation))
         .text("Generate protein translations via EMBOSS coderest")
+        .children(
+          opt[String]('i', "input")
+            .action((x, c) => c.copy(inputFilePath = x))
+            .text("The path to the input file")
+            .required(),
+          opt[String]('o', "output")
+            .action((x, c) => c.copy(outputFilePath = x))
+            .text("The path to the output file")
+            .required(),
+          opt[String]('e', "embossdir")
+            .action((x, c) => c.copy(embossPath = Some(x)))
+            .text("EMBOSS directory path")
+        )
+
+      cmd("emboss-motifs")
+        .action((_, c) => c.copy(command = Command.EmbossMotifs))
+        .text("Calculate motifs from protein translations via EMBOSS patmatmotifs")
         .children(
           opt[String]('i', "input")
             .action((x, c) => c.copy(inputFilePath = x))
